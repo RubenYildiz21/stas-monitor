@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Stas.Monitor.App/App.axaml" value="Stas.Monitor.App/Stas.Monitor.App.csproj" />
+        <entry key="Stas.Monitor.Views/AlertWindow.axaml" value="Stas.Monitor.App/Stas.Monitor.App.csproj" />
+        <entry key="Stas.Monitor.Views/MainWindow.axaml" value="Stas.Monitor.App/Stas.Monitor.App.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

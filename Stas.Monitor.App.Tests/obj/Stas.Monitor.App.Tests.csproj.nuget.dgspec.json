@@ -1,0 +1,503 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App.Tests/Stas.Monitor.App.Tests.csproj": {}
+  },
+  "projects": {
+    "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App.Tests/Stas.Monitor.App.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App.Tests/Stas.Monitor.App.Tests.csproj",
+        "projectName": "Stas.Monitor.App.Tests",
+        "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App.Tests/Stas.Monitor.App.Tests.csproj",
+        "packagesPath": "/Users/rubenyildiz/.nuget/packages/",
+        "outputPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/rubenyildiz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App/Stas.Monitor.App.csproj": {
+                "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App/Stas.Monitor.App.csproj"
+              },
+              "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj": {
+                "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj"
+              },
+              "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj": {
+                "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj"
+              },
+              "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/Stas.Monitor.Presentations.csproj": {
+                "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/Stas.Monitor.Presentations.csproj"
+              },
+              "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Views/Stas.Monitor.Views.csproj": {
+                "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Views/Stas.Monitor.Views.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit.Analyzers": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.2.1, )"
+            },
+            "NetArchTest.Rules": {
+              "target": "Package",
+              "version": "[1.3.2, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App/Stas.Monitor.App.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App/Stas.Monitor.App.csproj",
+        "projectName": "Stas.Monitor.App",
+        "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App/Stas.Monitor.App.csproj",
+        "packagesPath": "/Users/rubenyildiz/.nuget/packages/",
+        "outputPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/rubenyildiz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj": {
+                "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj"
+              },
+              "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj": {
+                "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj"
+              },
+              "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/Stas.Monitor.Presentations.csproj": {
+                "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/Stas.Monitor.Presentations.csproj"
+              },
+              "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Views/Stas.Monitor.Views.csproj": {
+                "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Views/Stas.Monitor.Views.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "Avalonia.Desktop": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "Avalonia.Diagnostics": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "Avalonia.Fonts.Inter": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "Avalonia.Themes.Fluent": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "Avalonia.Xaml.Behaviors": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "CommandLineParser.Net": {
+              "target": "Package",
+              "version": "[3.2.0.601, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp.Scripting": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj",
+        "projectName": "Stas.Monitor.Domains",
+        "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj",
+        "packagesPath": "/Users/rubenyildiz/.nuget/packages/",
+        "outputPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/rubenyildiz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Be.HenNi.Analyzers": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj",
+        "projectName": "Stas.Monitor.Infrastructures",
+        "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj",
+        "packagesPath": "/Users/rubenyildiz/.nuget/packages/",
+        "outputPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/rubenyildiz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj": {
+                "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Be.HenNi.Analyzers": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/Stas.Monitor.Presentations.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/Stas.Monitor.Presentations.csproj",
+        "projectName": "Stas.Monitor.Presentations",
+        "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/Stas.Monitor.Presentations.csproj",
+        "packagesPath": "/Users/rubenyildiz/.nuget/packages/",
+        "outputPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/rubenyildiz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj": {
+                "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "Be.HenNi.Analyzers": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Views/Stas.Monitor.Views.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Views/Stas.Monitor.Views.csproj",
+        "projectName": "Stas.Monitor.Views",
+        "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Views/Stas.Monitor.Views.csproj",
+        "packagesPath": "/Users/rubenyildiz/.nuget/packages/",
+        "outputPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Views/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/rubenyildiz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/Stas.Monitor.Presentations.csproj": {
+                "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/Stas.Monitor.Presentations.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "Avalonia.Desktop": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "Avalonia.Diagnostics": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "Avalonia.Fonts.Inter": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "Avalonia.Themes.Fluent": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp.Scripting": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
