@@ -51,11 +51,10 @@
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text="Durée : " />
-                        <ComboBox SelectedItem="{Binding SelectedDuration}" Name="DurationSelector">
+                        <ComboBox SelectedItem="{Binding SelectedDuration, Mode=TwoWay}" Name="DurationSelector">
                             <ComboBoxItem Content="30 seconds"/>
                             <ComboBoxItem Content="1 minute" IsSelected="True"/>
                             <ComboBoxItem Content="5 minutes"/>
-                            
                         </ComboBox>
                     </StackPanel>
                 </StackPanel>

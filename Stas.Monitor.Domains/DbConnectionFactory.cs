@@ -19,7 +19,7 @@ public class DbConnectionFactory : IDbConnectionFactory
         {
             return new SqliteConnection(_connectionString);
         }
-        else // MySQL ou autre
+        else
         {
             return new MySqlConnection(_connectionString);
         }
