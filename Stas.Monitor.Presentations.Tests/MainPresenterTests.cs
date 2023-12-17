@@ -1,134 +1,107 @@
-using Moq;
-using Stas.Monitor.Domains;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Interactivity;
 
-namespace Stas.Monitor.Presentations.Tests
+namespace Stas.Monitor.Presentations.Tests;
+
+[TestFixture]
+public class MainPresenterTests
 {
-    [TestFixture]
-    public class MainPresenterTests
+    private Mock<IDisplayManager> _mockDisplayManager;
+    private Mock<IMeasurementServices> _mockMeasurementServices;
+    private Mock<IThermometerPresenter> _mockThermometerPresenter;
+    private Configuration _testConfiguration;
+    private MainPresenter _mainPresenter;
+
+    [SetUp]
+    public void Setup()
     {
-        private Mock<MeasurementServices> _mockMeasurementService;
-        private Mock<AlertServices> _mockAlertServices;
-        private Configuration _testConfiguration;
-        private MainPresenter _mainPresenter;
-
-        [SetUp]
-        public void Setup()
+        _mockDisplayManager = new Mock<IDisplayManager>();
+        _mockMeasurementServices = new Mock<IMeasurementServices>();
+        _mockThermometerPresenter = new Mock<IThermometerPresenter>();
+        _testConfiguration = new Configuration(new List<ThermometerConfiguration>
         {
-            _mockMeasurementService = new Mock<MeasurementServices>("/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations.Tests/Measures.csv");
-            _mockAlertServices = new Mock<AlertServices>("/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations.Tests/Alerts.csv");
-            
-            _testConfiguration = new Configuration("/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations.Tests/Measures.csv", new List<ThermometerConfiguration>
-            {
-                new ThermometerConfiguration
-                {
-                    Name = "Thermometer1",
-                    TempFormat = "00.00°",
-                    TimestampFormat = "dd-MM-yyyy HH:mm:ss"
-                },
-            });
+            new ThermometerConfiguration("TestThermometer", "dd-MM-yyyy HH:mm:ss", "00.00°C", new Dictionary<string, int>()),
+            new ThermometerConfiguration("NewThermometer", "dd-MM-yyyy HH:mm:ss", "00.00°C", new Dictionary<string, int>())
+        });
 
-            _mainPresenter = new MainPresenter(_testConfiguration, _mockMeasurementService.Object, _mockAlertServices.Object);
-        }
+        _mockMeasurementServices.Setup(m => m.GetRecentMeasurements(It.IsAny<string>(), It.IsAny<DateTime>()))
+                        .Returns(new List<Measurement>());
+        _mockMeasurementServices.Setup(m => m.GetRecentHumidities(It.IsAny<string>(), It.IsAny<DateTime>()))
+                        .Returns(new List<Humidity>());
 
-        [Test]
-        public void ShouldUpdateRecentMeasurements_ItUpdateRecentMeasurements()
-        {
-            var expectedMeasurements = new List<Measurement> 
-            { 
-                new Measurement 
-                { 
-                    ThermometerName = "Thermometer1",
-                    Timestamp = DateTime.Now,
-                    MeasurementType = "Temperature",
-                    Value = 25.5
-                } 
-            };
-            _mockMeasurementService.Setup(m => m.GetRecentMeasurements(It.IsAny<string>(), It.IsAny<DateTime>()))
-                .Returns(expectedMeasurements);
+        _mainPresenter = new MainPresenter(_testConfiguration, _mockMeasurementServices.Object);
+    }
 
-            _mainPresenter.UpdateRecentMeasurements();
+    [Test]
+    public void Constructor_ShouldInitializesPropertiesCorrectly()
+    {
+        Assert.AreEqual(_testConfiguration, _mainPresenter.Configuration);
+        Assert.IsNotNull(_mainPresenter.SelectedThermometer);
+        Assert.AreEqual("1 minute", _mainPresenter.SelectedDuration);
+    }
 
-            Assert.AreEqual(expectedMeasurements, _mainPresenter.RecentMeasurements);
-        }
+    [Test]
+    public void SetCurrentThermometer_ShouldUpdatesCurrentThermometer()
+    {
+        var newThermometerName = "TestThermometer";
+        _mainPresenter.SetCurrentThermometer(newThermometerName);
+        Assert.AreEqual(newThermometerName, _mainPresenter.CurrentThermometer.Name);
+    }
 
-        [Test]
-        public void ShouldUpdateRecentAlerts_ItUpdateRecentAlerts()
-        {
-            _mainPresenter.UpdateRecentMeasurements();
-            _mainPresenter.UpdateRecentAlerts();
-            // Arrange
-            var expectedAlerts = new List<Alert> 
-            { 
-                new Alert 
-                { 
-                    ThermometerName = "Thermometer1",
-                    Timestamp = DateTime.Now,
-                    ExpectedTemperature = 25.0,
-                    ActualTemperature = 26.5
-                } 
-            };
-            
-            _mockAlertServices.Setup(a => a.GetRecentAlerts(It.IsAny<string>(), It.IsAny<DateTime>(), It.IsAny<DateTime>()))
-                .Returns(expectedAlerts);
+    [Test]
+    public void UpdateRecentMeasurements_ShouldUpdatesMeasurementsProperty()
+    {
+        // Act
+        _mainPresenter.UpdateRecentMeasurements();
 
-            // Act
-            _mainPresenter.UpdateRecentAlerts();
+        // Assert
+        Assert.IsNotNull(_mainPresenter.RecentMeasurements);
+    }
 
-            // Assert
-            Assert.AreEqual(expectedAlerts, _mainPresenter.RecentAlerts);
-            _mockAlertServices.Verify(a => a.GetRecentAlerts(It.IsAny<string>(), It.IsAny<DateTime>(), It.IsAny<DateTime>()), Times.Once);
-        }
+    [Test]
+    public void UpdateRecentHumidities_ShouldUpdatesHumiditiesProperty()
+    {
+        // Act
+        _mainPresenter.UpdateRecentHumidities();
 
+        // Assert
+        Assert.IsNotNull(_mainPresenter.RecentHumidities);
+    }
 
+    [Test]
+    public void UpdateDisplayBasedOnDuration_ShouldUpdatesMeasurementsAndHumidities()
+    {
+        // Arrange
+        var expectedMeasurements = new List<Measurement> { new Measurement() };
+        var expectedHumidities = new List<Humidity> { new Humidity() };
+        _mockMeasurementServices.Setup(m => m.GetRecentMeasurements(It.IsAny<string>(), It.IsAny<DateTime>()))
+            .Returns(expectedMeasurements);
+        _mockMeasurementServices.Setup(m => m.GetRecentHumidities(It.IsAny<string>(), It.IsAny<DateTime>()))
+            .Returns(expectedHumidities);
 
+        // Act
+        _mainPresenter.SelectedDuration = "1 minute"; // Change duration to trigger update
+        _mainPresenter.UpdateDisplayBasedOnDuration();
 
-        [Test]
-        public void SetCurrentThermometer_ShouldUpdateCurrentThermometer()
-        {
-            var thermometerName = "Thermometer1";
-            _mainPresenter.SetCurrentThermometer(thermometerName);
+        // Assert
+        Assert.AreEqual(expectedMeasurements, _mainPresenter.RecentMeasurements);
+        Assert.AreEqual(expectedHumidities, _mainPresenter.RecentHumidities);
+    }
 
-            Assert.AreEqual(thermometerName, _mainPresenter.CurrentThermometer.Name);
-        }
+    [Test]
+    public void OnThermometerSelectionChanged_ShouldUpdatesCurrentThermometer()
+    {
+        // Arrange
+        var newThermometer = new ThermometerConfiguration("TestThermometer", "dd-MM-yyyy HH:mm:ss", "00.00°C", new Dictionary<string, int>());
+        var addedItems = new List<object> { newThermometer };
+        var selectionChangedEventArgs = new SelectionChangedEventArgs(null, addedItems, null);
 
-        [Test]
-        public void OnThermometerSelectionChanged_ShouldUpdateCurrentThermometer()
-        {
-            var thermometerName = "Thermometer1";
-            var selectedThermometer = new ThermometerConfiguration { Name = thermometerName };
+        // Act
+        _mainPresenter.OnThermometerSelectionChanged(this, selectionChangedEventArgs);
 
-            var routedEvent = Avalonia.Interactivity.RoutedEvent.Register<MainPresenter, SelectionChangedEventArgs>("SelectionChanged", RoutingStrategies.Bubble);
-            _mainPresenter.OnThermometerSelectionChanged(this, new SelectionChangedEventArgs(routedEvent, new List<object>(), new List<object> { selectedThermometer }));
-
-            Assert.AreEqual(thermometerName, _mainPresenter.CurrentThermometer.Name);
-        }
-        
-        
-        [Test]
-        public void UpdateRecentMeasurements_WhenNoMeasurements_ShouldHandleGracefully()
-        {
-            _mockMeasurementService.Setup(m => m.GetRecentMeasurements(It.IsAny<string>(), It.IsAny<DateTime>()))
-                .Returns(new List<Measurement>());
-
-            _mainPresenter.UpdateRecentMeasurements();
-
-            Assert.IsEmpty(_mainPresenter.RecentMeasurements);
-        }
-        
-        [Test]
-        public void UpdateRecentMeasurements_ShouldCallServiceWithCorrectThermometerName()
-        {
-            var thermometerName = "Thermometer1";
-            _mainPresenter.SetCurrentThermometer(thermometerName);
-
-            _mainPresenter.UpdateRecentMeasurements();
-
-            _mockMeasurementService.Verify(m => m.GetRecentMeasurements("Thermometer1", It.IsAny<DateTime>()), Times.Exactly(2));
-        }
-
-
-
+        // Assert
+        Assert.AreEqual(newThermometer.Name, _mainPresenter.CurrentThermometer.Name);
+        Assert.AreEqual(newThermometer.TimestampFormat, _mainPresenter.CurrentThermometer.TimestampFormat);
+        Assert.AreEqual(newThermometer.TempFormat, _mainPresenter.CurrentThermometer.TempFormat);
     }
 }

@@ -1,16 +1,14 @@
 using System.Timers;
-using Timer = System.Timers.Timer;
 
 namespace Stas.Monitor.Presentations;
 
 public class TimerManager
 {
-    private Timer _updateTimer;
-    
+    private ITimer _updateTimer;
+
     public TimerManager()
     {
-        _updateTimer = new Timer(1000);
-        _updateTimer.AutoReset = true;
+        _updateTimer = new TimerWrapper(5000) { AutoReset = true };
     }
 
     public void StartTimer(ElapsedEventHandler onElapsed)

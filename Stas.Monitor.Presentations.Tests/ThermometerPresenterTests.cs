@@ -1,109 +1,90 @@
-using NUnit.Framework;
-using Stas.Monitor.Domains;
-using Stas.Monitor.Presentations;
-using System.Collections.Generic;
-using System.Linq;
-using System;
+﻿using System.Collections.ObjectModel;
 
-namespace Stas.Monitor.Presentations.Tests
+namespace Stas.Monitor.Presentations.Tests;
+
+[TestFixture]
+public class ThermometerPresenterTests
 {
-    [TestFixture]
-    public class ThermometerPresenterTests
+    private Mock<IDataItemConverter> _mockDataItemConverter;
+    private Mock<IUiThreadInvoker> _mockUiThreadInvoker;
+    private ThermometerPresenter _thermometerPresenter;
+
+    [SetUp]
+    public void Setup()
     {
-        private ThermometerPresenter _thermometerPresenter;
-
-        [SetUp]
-        public void Setup()
-        {
-            _thermometerPresenter = new ThermometerPresenter();
-        }
-
-        [Test]
-        public void SetRecentMeasurements_ShouldAddMeasurementsToCollection()
-        {
-            var measurements = new List<Measurement>
-            {
-                new Measurement { Timestamp = DateTime.Now, Value = 25.5 },
-                new Measurement { Timestamp = DateTime.Now.AddMinutes(-1), Value = 24.5 }
-            };
-
-            _thermometerPresenter.SetRecentMeasurements(measurements);
-
-            Assert.AreEqual(measurements.Count, _thermometerPresenter.RecentMeasurements.Count);
-        }
-
-        [Test]
-        public void SetRecentAlert_ShouldAddAlertsToCollection()
-        {
-            var alerts = new List<Alert>
-            {
-                new Alert { Timestamp = DateTime.Now, ActualTemperature = 25.5, ExpectedTemperature = 24.5 },
-                new Alert { Timestamp = DateTime.Now.AddMinutes(-1), ActualTemperature = 24.5, ExpectedTemperature = 23.5 }
-            };
-
-            _thermometerPresenter.SetRecentAlert(alerts);
-
-            Assert.AreEqual(alerts.Count, _thermometerPresenter.RecentAlerts.Count);
-        }
-
-        [Test]
-        public async Task UpdateDataItems_ShouldMergeAndSortMeasurementsAndAlertsAsync()
-        {
-            var measurements = new List<Measurement>
-            {
-                new Measurement { Timestamp = DateTime.Now, Value = 25.5 },
-                new Measurement { Timestamp = DateTime.Now.AddMinutes(-1), Value = 24.5 }
-            };
-
-            var alerts = new List<Alert>
-            {
-                new Alert { Timestamp = DateTime.Now, ActualTemperature = 25.5, ExpectedTemperature = 24.5 },
-                new Alert { Timestamp = DateTime.Now.AddMinutes(-1), ActualTemperature = 24.5, ExpectedTemperature = 23.5 }
-            };
-
-            await _thermometerPresenter.UpdateDataItems(measurements, alerts);
-
-            var expectedCount = measurements.Count + alerts.Count;
-            Assert.AreEqual(expectedCount, _thermometerPresenter.DataItems.Count);
-            
-        }
-        
-        [Test]
-        public void ConvertToDataItem_WithUnknownType_ShouldThrowInvalidOperationException()
-        {
-            // Arrange
-            var unknownObject = new object();
-
-            // Act & Assert
-            Assert.Throws<InvalidOperationException>(() => _thermometerPresenter.ConvertToDataItem(unknownObject));
-        }
-        
-        [Test]
-        public async Task UpdateDataItems_InTestMode_ShouldNotUseDispatcherAsync()
-        {
-            // Arrange
-            var measurements = new List<Measurement>
-            {
-                new Measurement { Timestamp = DateTime.Now, Value = 25.5 }
-            };
-
-            var alerts = new List<Alert>
-            {
-                new Alert { Timestamp = DateTime.Now, ActualTemperature = 25.5, ExpectedTemperature = 24.5 }
-            };
-
-            // Simuler le mode test
-            AppDomain.CurrentDomain.SetData("IsInTestMode", true);
-
-            // Act
-            await _thermometerPresenter.UpdateDataItems(measurements, alerts);
-
-            // Assert
-            var expectedCount = measurements.Count + alerts.Count;
-            Assert.AreEqual(expectedCount, _thermometerPresenter.DataItems.Count);
-        }
-
-
+        _mockDataItemConverter = new Mock<IDataItemConverter>();
+        _mockUiThreadInvoker = new Mock<IUiThreadInvoker>();
+        _thermometerPresenter = new ThermometerPresenter(_mockDataItemConverter.Object, _mockUiThreadInvoker.Object);
     }
-    
+
+    [Test]
+    public async Task UpdateDataItemsTemperature_ShouldInvokeConverterAndUiThreadInvoker()
+    {
+        // Arrange
+        var measurements = new List<Measurement> { new Measurement() };
+        var dataItems = new List<DataItem> { new DataItem() };
+        _mockDataItemConverter.Setup(c => c.ConvertMeasurementsToDataItems(measurements)).Returns(dataItems);
+
+        // Act
+        await _thermometerPresenter.UpdateDataItemsTemperature(measurements);
+
+        // Assert
+        _mockDataItemConverter.Verify(c => c.ConvertMeasurementsToDataItems(measurements), Times.Once);
+        _mockUiThreadInvoker.Verify(i => i.InvokeOnUIThreadAsync(It.IsAny<System.Action>()), Times.Once);
+    }
+
+    [Test]
+    public async Task UpdateDataItemsHumidity_ShouldInvokeConverterAndUiThreadInvoker()
+    {
+        // Arrange
+        var humidities = new List<Humidity> { new Humidity() };
+        var dataItems = new List<DataItem> { new DataItem() };
+        _mockDataItemConverter.Setup(c => c.ConvertHumiditiesToDataItems(humidities)).Returns(dataItems);
+
+        // Act
+        await _thermometerPresenter.UpdateDataItemsHumidity(humidities);
+
+        // Assert
+        _mockDataItemConverter.Verify(c => c.ConvertHumiditiesToDataItems(humidities), Times.Once);
+        _mockUiThreadInvoker.Verify(i => i.InvokeOnUIThreadAsync(It.IsAny<System.Action>()), Times.Once);
+    }
+
+    [Test]
+    public void ClearTemperatureData_ShouldClearDataItemsTemperature()
+    {
+        // Act
+        _thermometerPresenter.ClearTemperatureData();
+
+        // Assert
+        Assert.IsEmpty(_thermometerPresenter.DataItemsTemperature);
+    }
+
+    [Test]
+    public void ClearHumidityData_ShouldClearDataItemsHumidity()
+    {
+        // Act
+        _thermometerPresenter.ClearHumidityData();
+
+        // Assert
+        Assert.IsEmpty(_thermometerPresenter.DataItemsHumidity);
+    }
+
+    [Test]
+    public void UpdateObservableCollection_ShouldClearAndAddItems()
+    {
+        // Arrange
+        var testCollection = new ObservableCollection<DataItem>();
+        var testDataItems = new List<DataItem>
+        {
+            new DataItem { ActualValue = 25.0 },
+            new DataItem { ActualValue = 30.0 }
+        };
+
+        // Act
+        _thermometerPresenter.UpdateObservableCollection(testCollection, testDataItems);
+
+        // Assert
+        Assert.AreEqual(testDataItems.Count, testCollection.Count); // Verify collection has the correct number of items
+        CollectionAssert.AreEqual(testDataItems, testCollection); // Verify the items in the collection are correct
+    }
 }

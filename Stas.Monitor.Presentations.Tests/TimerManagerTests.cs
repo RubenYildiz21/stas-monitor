@@ -1,50 +1,56 @@
-using NUnit.Framework;
-using Stas.Monitor.Presentations;
-using System.Timers;
-using System.Threading;
+﻿namespace Stas.Monitor.Presentations.Tests;
 
-namespace Stas.Monitor.Presentations.Tests
+[TestFixture]
+public class TimerManagerTests
 {
-    [TestFixture]
-    public class TimerManagerTests
+    private TimerManager _timerManager;
+    private bool _eventRaised;
+
+    [SetUp]
+    public void Setup()
     {
-        private TimerManager _timerManager;
-        private int _elapsedCount;
+        _timerManager = new TimerManager();
+        _eventRaised = false;
+    }
 
-        [SetUp]
-        public void Setup()
+    [Test]
+    public void Timer_ElapsedEvent_ShouldBeRaised()
+    {
+        // Arrange
+        var autoResetEvent = new AutoResetEvent(false);
+        ElapsedEventHandler handler = (sender, e) =>
         {
-            _timerManager = new TimerManager();
-            _elapsedCount = 0;
-        }
+            _eventRaised = true;
+            autoResetEvent.Set();
+        };
 
-        [Test]
-        public void StartTimer_ShouldTriggerElapsedEvent()
+        _timerManager.StartTimer(handler);
+
+        // Act
+        autoResetEvent.WaitOne(6000); // attendre un peu plus que la durée prévue
+
+        // Assert
+        Assert.IsTrue(_eventRaised);
+    }
+
+    [Test]
+    public void StopTimer_ShouldPreventElapsedEvent()
+    {
+        // Arrange
+        var autoResetEvent = new AutoResetEvent(false);
+        ElapsedEventHandler handler = (sender, e) =>
         {
-            _timerManager.StartTimer(OnElapsed);
+            _eventRaised = true;
+            autoResetEvent.Set();
+        };
 
-            // Attendre un peu plus que l'intervalle du timer pour s'assurer qu'il a été déclenché
-            Thread.Sleep(1100);
+        _timerManager.StartTimer(handler);
 
-            Assert.AreEqual(1, _elapsedCount);
-        }
+        // Act
+        _timerManager.StopTimer(handler);
+        autoResetEvent.WaitOne(6000); // Wait a bit longer than the timer interval
 
-        [Test]
-        public void StopTimer_ShouldStopTriggeringElapsedEvent()
-        {
-            _timerManager.StartTimer(OnElapsed);
-            Thread.Sleep(900); // Augmenter le temps d'attente pour s'assurer que l'événement Elapsed est déclenché au moins une fois
-            _timerManager.StopTimer(OnElapsed);
-            Thread.Sleep(900); // Attendre pour s'assurer que l'événement Elapsed n'est pas déclenché après l'arrêt du timer
-
-            // Le timer a été démarré puis arrêté, donc l'événement Elapsed devrait être déclenché au moins une fois
-            Assert.AreEqual(1, _elapsedCount);
-        }
-
-
-        private void OnElapsed(object sender, ElapsedEventArgs e)
-        {
-            _elapsedCount++;
-        }
+        // Assert
+        Assert.IsFalse(_eventRaised);
     }
 }

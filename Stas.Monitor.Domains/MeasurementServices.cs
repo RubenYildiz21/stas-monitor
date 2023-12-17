@@ -1,49 +1,53 @@
-using System.Globalization;
+using MySql.Data.MySqlClient;
 using Serilog;
 
 namespace Stas.Monitor.Domains;
 
 public class MeasurementServices : IMeasurementServices
 {
+    private readonly IDatabaseService _databaseService;
 
-    private string _csvFilePath;
-    
-    public MeasurementServices(string csvFilePath)
+    public MeasurementServices(IDatabaseService databaseService)
     {
-        this._csvFilePath = csvFilePath;
+        _databaseService = databaseService;
     }
 
-    public MeasurementServices()
-    {
-        
-    }
-
-    public override IEnumerable<Measurement> GetRecentMeasurements(string thermometerName, DateTime fromTime)
+    public IEnumerable<Measurement> GetRecentMeasurements(string thermometerName, DateTime fromTime)
     {
         try
         {
-            var lines = File.ReadAllLines(_csvFilePath).Skip(1);
-            return lines.Select(line =>
-                {
-                    var columns = line.Split(',');
-                    if (columns.Length < 4)
-                    {
-                        throw new Exception("Format invalide");
-                    }
-                    return new Measurement
-                    {
-                        ThermometerName = columns[0],
-                        Timestamp = DateTime.ParseExact(columns[1], "dd-MM-yyyy HH:mm:ss", CultureInfo.InvariantCulture),
-                        MeasurementType = columns[2],
-                        Value = double.Parse(columns[3].Replace("°C", ""), CultureInfo.InvariantCulture),
-                    };
-                })
-                .Where(measurement => measurement.ThermometerName == thermometerName && measurement.Timestamp >= fromTime).OrderByDescending(measurement => measurement.Timestamp);
+            return _databaseService.GetMeasurements(thermometerName, fromTime);
         }
-        catch (FileNotFoundException ex)
+        catch (MySqlException ex)
         {
-            Log.Error($"File not found: {_csvFilePath}", ex);
-            throw new Exception($"Erreur lors de la lecture du fichier de mesures csv: {_csvFilePath}", ex);
+            Log.Error("stas monitor : Unable to connect to database");
+            throw new Exception($"stas monitor : Unable to connect to database {ex.Message}");
+        }
+    }
+
+    public IEnumerable<Humidity> GetRecentHumidities(string thermometerName, DateTime fromTime)
+    {
+        try
+        {
+            return _databaseService.GetHumidities(thermometerName, fromTime);
+        }
+        catch (MySqlException ex)
+        {
+            Log.Error("stas monitor : Unable to connect to database");
+            throw new Exception($"stas monitor :Unable to connect to database {ex.Message}");
+        }
+    }
+
+    public DateTime GetLastMeasurementTimestamp(string thermometerName)
+    {
+        try
+        {
+            return _databaseService.GetLastMeasurementTimestamp(thermometerName);
+        }
+        catch (MySqlException e)
+        {
+            Log.Error("stas monitor : Unable to connect to database");
+            throw new Exception($"stas monitor :Unable to connect to database {e.Message}");
         }
     }
 }

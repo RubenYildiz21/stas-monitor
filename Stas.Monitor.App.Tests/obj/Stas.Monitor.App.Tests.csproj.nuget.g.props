@@ -25,11 +25,13 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">/Users/rubenyildiz/.nuget/packages/xunit.analyzers/1.4.0</Pkgxunit_analyzers>
+    <PkgStyleCop_Analyzers_Unstable Condition=" '$(PkgStyleCop_Analyzers_Unstable)' == '' ">/Users/rubenyildiz/.nuget/packages/stylecop.analyzers.unstable/1.2.0.507</PkgStyleCop_Analyzers_Unstable>
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">/Users/rubenyildiz/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.4</PkgMicrosoft_CodeAnalysis_Analyzers>
-    <PkgBe_HenNi_Analyzers Condition=" '$(PkgBe_HenNi_Analyzers)' == '' ">/Users/rubenyildiz/.nuget/packages/be.henni.analyzers/1.0.2</PkgBe_HenNi_Analyzers>
+    <PkgIDisposableAnalyzers Condition=" '$(PkgIDisposableAnalyzers)' == '' ">/Users/rubenyildiz/.nuget/packages/idisposableanalyzers/4.0.7</PkgIDisposableAnalyzers>
+    <PkgBe_HenNi_Analyzers Condition=" '$(PkgBe_HenNi_Analyzers)' == '' ">/Users/rubenyildiz/.nuget/packages/be.henni.analyzers/1.0.3</PkgBe_HenNi_Analyzers>
     <PkgAvalonia_BuildServices Condition=" '$(PkgAvalonia_BuildServices)' == '' ">/Users/rubenyildiz/.nuget/packages/avalonia.buildservices/0.0.28</PkgAvalonia_BuildServices>
     <PkgAvalonia Condition=" '$(PkgAvalonia)' == '' ">/Users/rubenyildiz/.nuget/packages/avalonia/11.0.2</PkgAvalonia>
-    <PkgNUnit_Analyzers Condition=" '$(PkgNUnit_Analyzers)' == '' ">/Users/rubenyildiz/.nuget/packages/nunit.analyzers/3.3.0</PkgNUnit_Analyzers>
+    <PkgNUnit_Analyzers Condition=" '$(PkgNUnit_Analyzers)' == '' ">/Users/rubenyildiz/.nuget/packages/nunit.analyzers/3.10.0</PkgNUnit_Analyzers>
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">/Users/rubenyildiz/.nuget/packages/newtonsoft.json/9.0.1</PkgNewtonsoft_Json>
   </PropertyGroup>
 </Project>

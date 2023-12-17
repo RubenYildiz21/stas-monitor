@@ -3,62 +3,117 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:Stas.Monitor.Views"
-        xmlns:local="clr-namespace:Stas.Monitor.Domains;assembly=Stas.Monitor.Domains"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:CompileBindings="False"
         x:Class="Stas.Monitor.Views.MainWindow"
         Title="Stas.Monitor.Views"
         MinWidth="1200"
-        Background="#F5F5F5">
-    
+        MinHeight="700">
+
+
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
         <!-- Section de sélection du thermomètre -->
-        <Border Background="White" CornerRadius="10" Padding="20" Margin="0 0 0 10" VerticalAlignment="Top" HorizontalAlignment="Center" BorderBrush="#E0E0E0" BorderThickness="1" BoxShadow="0 0 10 #DDDDDD">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="280">
-                <TextBlock Text="Thermomètres disponibles" Foreground="Black" FontSize="22" Margin="0 0 0 10" HorizontalAlignment="Center"/>
-                <ComboBox Name="Thermo" MinWidth="280" Margin="0 10 0 20" Foreground="Black" BorderBrush="Gray" SelectedIndex="0" Background="White"
-                          ItemsSource="{Binding Configuration.Thermometers}"
-                          SelectionChanged="OnThermometerSelectionChanged">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Name="ThermometerName" Text="{Binding Name}" FontSize="16"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
-            </StackPanel>
-        </Border>
-        
+        <Expander Grid.ColumnSpan="2"
+            Header="Options d'affichage"  FontWeight="Regular" CornerRadius="15" 
+            IsExpanded="True" 
+            ExpandDirection="Down"
+            HorizontalAlignment="Stretch">
+            <Border  CornerRadius="10" Padding="20" Margin="0 0 0 10" VerticalAlignment="Top" HorizontalAlignment="Center" BorderBrush="#E0E0E0" BorderThickness="1" BoxShadow="0 0 10 #DDDDDD">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center" Spacing="20" MinWidth="600">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Thermomètres disponibles" FontSize="22" Margin="0 0 0 10" HorizontalAlignment="Center"/>
+                        <ComboBox Name="Thermo" MinWidth="280" Margin="0 10 0 20" BorderBrush="Gray" SelectedIndex="0" 
+                                  ItemsSource="{Binding Configuration.Thermometers}"
+                                  SelectionChanged="OnThermometerSelectionChanged">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Name="ThermometerName" Text="{Binding Name}" FontSize="16"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <CheckBox Content="Temperature" IsChecked="True"  
+                                  Checked="OnShowTemperatureChanged" 
+                                  Unchecked="OnShowTemperatureChanged"/>
+                        <CheckBox Content="Humidity" IsChecked="True" 
+                                  Checked="OnShowHumidityChanged"
+                                  Unchecked="OnShowHumidityChanged"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Durée : " />
+                        <ComboBox SelectedItem="{Binding SelectedDuration}" Name="DurationSelector">
+                            <ComboBoxItem Content="30 seconds"/>
+                            <ComboBoxItem Content="1 minute" IsSelected="True"/>
+                            <ComboBoxItem Content="5 minutes"/>
+                            
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Expander>
         <!-- Section des mesures -->
-        <ScrollViewer Grid.Row="1" Margin="0 10 0 0">
-            <Border Background="White" CornerRadius="10" Padding="20" HorizontalAlignment="Center" BorderBrush="#E0E0E0" BorderThickness="1" BoxShadow="0 0 10 #DDDDDD">
+        <TextBlock Text="Temperature" HorizontalAlignment="Center" Margin="0 300 0 20" FontSize="20"  />
+        <ScrollViewer Grid.Row="1" Grid.Column="0" Margin="0 10 0 0">
+            <Border CornerRadius="10" Padding="20" HorizontalAlignment="Center" BorderBrush="#E0E0E0" BorderThickness="1">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 0 0 10" HorizontalAlignment="Center" Spacing="50">
-                        <TextBlock MinWidth="150" FontSize="20" Margin="10 0 30 0" Text="Date-Heure" Foreground="Black"/>
-                        <TextBlock MinWidth="100" FontSize="20" Margin="0 0 30 0" Text="T° Actuelle" Foreground="Black"/>
-                        <TextBlock MinWidth="150" FontSize="20" Margin="0 0 30 0" Text="Type" Foreground="Black"/>
-                        <TextBlock MinWidth="100" FontSize="20" Margin="0 0 30 0" Text="T° Attendue" Foreground="Black"/>
+                        <TextBlock MinWidth="120" FontSize="15" Margin="10 0 20 0" Text="Date-Heure" />
+                        <TextBlock MinWidth="70" FontSize="15" Margin="0 0 20 0" Text="T° Actuelle" />
+                        <TextBlock MinWidth="70" FontSize="15" Margin="0 0 20 0" Text="Erreur" />
                     </StackPanel>
-                    <ItemsControl Name="DataItemList" Margin="0" ItemsSource="{Binding SelectedThermometer.DataItems}">
+                    <ItemsControl Name="DataItemList" Margin="0" ItemsSource="{Binding SelectedThermometer.DataItemsTemperature}">
                         <ItemsControl.ItemTemplate >
                             <DataTemplate>
-                                <Border Padding="10" Margin="0 0 0 10" BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Background="{Binding BackgroundColor}">
+                                <Border Padding="10" Margin="0 0 0 10" BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" >
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="50">
-                                        <TextBlock MinWidth="150" FontSize="18" Margin="10 0 30 0" Text="{Binding Timestamp}" Foreground="Black"/>
-                                        <TextBlock MinWidth="100" FontSize="18" Margin="0 0 30 0" Text="{Binding ActualTemperature, StringFormat={}{0:F2}°C}" Foreground="Black"/>
-                                        <TextBlock MinWidth="150" FontSize="18" Margin="0 0 30 0" Text="{Binding MeasurementType}" Foreground="Black"/>
-                                        <TextBlock MinWidth="100" FontSize="18" Margin="0 0 30 0" Text="{Binding ExpectedTemperature, StringFormat={}{0:F2}°C}" Foreground="Black"/>
+                                        <TextBlock MinWidth="120" FontSize="13" Margin="10 0 20 0" Text="{Binding Timestamp}" />
+                                        <TextBlock MinWidth="70" FontSize="13" Margin="0 0 10 0" Text="{Binding ActualValue, StringFormat={}{0:F2}°C}" />
+                                        <TextBlock MinWidth="70" FontSize="13" Margin="0 0 20 0" 
+                                                   Text="{Binding FormattedDifference}" 
+                                                   Foreground="#FF747B"/>
                                     </StackPanel>
                                 </Border>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
-                        
                     </ItemsControl>
-
+                </StackPanel>
+            </Border>
+        </ScrollViewer>
+        <TextBlock Text="Humidity" HorizontalAlignment="Center" Margin="600 300 -600 20" FontSize="20"  />
+        <ScrollViewer Grid.Row="1" Grid.Column="1" Margin="10 10 0 0">
+            <Border CornerRadius="10" Padding="20" HorizontalAlignment="Center" BorderBrush="#E0E0E0" BorderThickness="1" BoxShadow="0 0 10 #DDDDDD">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10" HorizontalAlignment="Center" Spacing="50">
+                        <TextBlock MinWidth="120" FontSize="15" Margin="10 0 20 0" Text="Date-Heure" />
+                        <TextBlock MinWidth="70" FontSize="15" Margin="0 0 20 0" Text="% Actuelle" />
+                        <TextBlock MinWidth="70" FontSize="15" Margin="0 0 20 0" Text="Erreur" />
+                    </StackPanel>
+                    
+                    <ItemsControl Name="DataItemList2" Margin="0" ItemsSource="{Binding SelectedThermometer.DataItemsHumidity}">
+                        <ItemsControl.ItemTemplate >
+                            <DataTemplate>
+                                <Border Padding="10" Margin="0 0 0 10" BorderBrush="LightGray" BorderThickness="1" CornerRadius="5">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="50">
+                                        <TextBlock MinWidth="120" FontSize="13" Margin="10 0 20 0" Text="{Binding Timestamp}" />
+                                        <TextBlock MinWidth="70" FontSize="13" Margin="0 0 10 0" Text="{Binding ActualValue, StringFormat={}{0:F2}%}" />
+                                        <TextBlock MinWidth="70" FontSize="13" Margin="0 0 20 0" 
+                                                   Text="{Binding FormattedDifference}" 
+                                                   Foreground="#4FA0E4"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </StackPanel>
             </Border>
         </ScrollViewer>

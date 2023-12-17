@@ -1,13 +1,14 @@
 namespace Stas.Monitor.Domains;
 
-public class DataItem
-{
-    public DateTime Timestamp { get; set; }
-    public string DataType { get; set; }
-    public double? ExpectedTemperature { get; set; }
-    public double? ActualTemperature { get; set; }
-    public string MeasurementType { get; set; }
-    
-    public string BackgroundColor => DataType == "Alert" ? "#FF747B" : "White";
+ public record DataItem
+ {
+     public DateTime Timestamp { get; init; }
 
-}
+     public double? Difference { get; init; }
+
+     public double? ActualValue { get; init; }
+
+     public string? MeasurementType { get; init; }
+
+     public string? FormattedDifference { get; init; }
+ }

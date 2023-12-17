@@ -1,159 +1,109 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Moq;
-using NUnit.Framework;
-using Serilog;
-using Stas.Monitor.Domains;
-using Stas.Monitor.Presentations;
+﻿namespace Stas.Monitor.Presentations.Tests;
 
-namespace Stas.Monitor.Presentations.Tests
+[TestFixture]
+public class DataManagerTests
 {
-    [TestFixture]
-    public class DataManagerTests
+    private Mock<IMeasurementServices> _mockMeasurementService;
+    private DataManager _dataManager;
+    private Configuration _configuration;
+    private ThermometerConfiguration _currentThermometer;
+
+    [SetUp]
+    public void Setup()
     {
-        private Mock<MeasurementServices> _mockMeasurementService;
-        private Mock<AlertServices> _mockAlertServices;
-        private DataManager _dataManager;
-
-        [SetUp]
-        public void Setup()
-        {
-            _mockMeasurementService = new Mock<MeasurementServices>();
-            _mockAlertServices = new Mock<AlertServices>();
-            var thermometers = new List<ThermometerConfiguration>
-            {
-                new ThermometerConfiguration
-                {
-                    Name = "Thermometer2",
-                    TempFormat = "00.00°",
-                    TimestampFormat = "dd-MM-yyyy HH:mm:ss"
-                },
-            };
-            var config = new Configuration("/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations.Tests/Measures.csv", thermometers);
-            var thermometerConfig = new ThermometerConfiguration { Name = "Thermometer1" };
-            _dataManager = new DataManager(config, _mockMeasurementService.Object, _mockAlertServices.Object, thermometerConfig);
-        }
-        
-        
-        [Test]
-        public void GetRecentAlerts_ValidRecentMeasurements_ReturnsAlerts()
-        {
-            // Arrange
-            var measurements = new List<Measurement>
-            {
-                new Measurement
-                {
-                    ThermometerName = "Thermometer1",
-                    Timestamp = DateTime.Now.AddMinutes(-5),
-                    MeasurementType = "Temperature",
-                    Value = 25.5
-                },
-                new Measurement
-                {
-                    ThermometerName = "Thermometer1",
-                    Timestamp = DateTime.Now,
-                    MeasurementType = "Temperature",
-                    Value = 30.5
-                }
-            };
-            var expectedAlerts = new List<Alert>
-            {
-                new Alert
-                {
-                    ThermometerName = "Thermometer1",
-                    Timestamp = DateTime.Now,
-                    ExpectedTemperature = 25.5,
-                    ActualTemperature = 30.5
-                }
-            };
-            _mockAlertServices.Setup(a => a.GetRecentAlerts(It.IsAny<string>(), It.IsAny<DateTime>(), It.IsAny<DateTime>()))
-                .Returns(expectedAlerts);
-
-            // Act
-            var result = _dataManager.GetRecentAlerts(measurements);
-
-            // Assert
-            Assert.AreEqual(expectedAlerts, result.ToList());
-        }
-
-
-        [Test]
-        public void GetRecentAlerts_ValidData_ReturnsAlerts()
-        {
-            // Arrange
-            var measurements = new List<Measurement>
-            {
-                new Measurement
-                {
-                    ThermometerName = "Thermometer1",
-                    Timestamp = DateTime.Now.AddMinutes(-5),
-                    MeasurementType = "Temperature",
-                    Value = 25.5
-                },
-                new Measurement
-                {
-                    ThermometerName = "Thermometer1",
-                    Timestamp = DateTime.Now,
-                    MeasurementType = "Temperature",
-                    Value = 30.5
-                }
-            };
-            var expectedAlerts = new List<Alert>
-            {
-                new Alert
-                {
-                    ThermometerName = "Thermometer1",
-                    Timestamp = DateTime.Now,
-                    ExpectedTemperature = 25.5,
-                    ActualTemperature = 30.5
-                }
-            };
-            _mockAlertServices.Setup(a => a.GetRecentAlerts(It.IsAny<string>(), It.IsAny<DateTime>(), It.IsAny<DateTime>()))
-                .Returns(expectedAlerts);
-
-            // Act
-            var result = _dataManager.GetRecentAlerts(measurements);
-
-            // Assert
-            Assert.AreEqual(expectedAlerts, result);
-        }
-
-        [Test]
-        public void GetRecentMeasurements_NoMatchingThermometerName_ThrowsException()
-        {
-            // Arrange
-            var validCsvContent = new[] { "Thermometer2,25-10-2023 12:00:00,25.5°C" };
-            
-            File.AppendAllLines(_dataManager.Configuration.MeasurementFilePath, validCsvContent);
-            
-            // Act & Assert
-            Assert.Throws<FormatException>(() => _dataManager.GetRecentMeasurements());
-        }
-        
-        [Test]
-        public void SetCurrentThermometer_ThermometerNotFound_LogsError()
-        {
-            // Arrange
-            var invalidThermometerName = "InvalidThermometer";
-
-            // Act
-            Assert.Throws<NSubstitute.Exceptions.ArgumentNotFoundException>(() => _dataManager.SetCurrentThermometer(invalidThermometerName));            
-        }
-
-        [Test]
-        public void GetRecentAlerts_EmptyRecentMeasurements_ReturnsEmptyList()
-        {
-            // Arrange
-            var measurements = Enumerable.Empty<Measurement>();
-
-            // Act
-            var result = _dataManager.GetRecentAlerts(measurements);
-
-            // Assert
-            Assert.IsEmpty(result);
-        }
-
-
+        _mockMeasurementService = new Mock<IMeasurementServices>();
+        _currentThermometer = new ThermometerConfiguration("TestThermometer", "TimestampFormat", "TempFormat", new Dictionary<string, int>());
+        _configuration = new Configuration(new List<ThermometerConfiguration> { _currentThermometer });
+        _dataManager = new DataManager(_configuration, _mockMeasurementService.Object, _currentThermometer);
     }
+
+    [Test]
+    public void GetRecentMeasurements_ShouldCallsMeasurementService()
+    {
+        // Arrange
+        var thermometerName = "TestThermometer";
+        var fromTime = DateTime.Now;
+        var expectedMeasurements = new List<Measurement> { new Measurement() };
+        _mockMeasurementService.Setup(s => s.GetRecentMeasurements(thermometerName, fromTime)).Returns(expectedMeasurements);
+
+        // Act
+        var result = _dataManager.GetRecentMeasurements(thermometerName, fromTime);
+
+        // Assert
+        _mockMeasurementService.Verify(s => s.GetRecentMeasurements(thermometerName, fromTime), Times.Once);
+        Assert.AreEqual(expectedMeasurements, result);
+    }
+
+    [Test]
+    public void GetRecentHumidities_ShouldCallsMeasurementService()
+    {
+        // Arrange
+        var thermometerName = "TestThermometer";
+        var fromTime = DateTime.Now;
+        var expectedHumidities = new List<Humidity> { new Humidity() };
+        _mockMeasurementService.Setup(s => s.GetRecentHumidities(thermometerName, fromTime)).Returns(expectedHumidities);
+
+        // Act
+        var result = _dataManager.GetRecentHumidities(thermometerName, fromTime);
+
+        // Assert
+        _mockMeasurementService.Verify(s => s.GetRecentHumidities(thermometerName, fromTime), Times.Once);
+        Assert.AreEqual(expectedHumidities, result);
+    }
+
+    [Test]
+    public void GetLastMeasurementTimestamp_ShouldCallsMeasurementService()
+    {
+        // Arrange
+        var thermometerName = "TestThermometer";
+        var expectedTimestamp = DateTime.Now;
+        _mockMeasurementService.Setup(s => s.GetLastMeasurementTimestamp(thermometerName)).Returns(expectedTimestamp);
+
+        // Act
+        var result = _dataManager.GetLastMeasurementTimestamp(thermometerName);
+
+        // Assert
+        _mockMeasurementService.Verify(s => s.GetLastMeasurementTimestamp(thermometerName), Times.Once);
+        Assert.AreEqual(expectedTimestamp, result);
+    }
+
+    [Test]
+    public void SetCurrentThermometer_ShouldUpdatesCurrentThermometer()
+    {
+        // Arrange
+        var newThermometerName = "NewThermometer";
+        var newThermometerConfig = new ThermometerConfiguration(newThermometerName, "TimestampFormat", "TempFormat", new Dictionary<string, int>());
+        _configuration.Thermometers.Add(newThermometerConfig);
+
+        // Act
+        _dataManager.SetCurrentThermometer(newThermometerName);
+
+        // Assert
+        Assert.AreEqual(newThermometerConfig, _dataManager.Configuration.Thermometers.FirstOrDefault(t => t.Name == newThermometerName));
+    }
+
+    [Test]
+    public void GetRecentMeasurements_WhenServiceThrowsException_ShouldThrowsException()
+    {
+        // Arrange
+        var thermometerName = "TestThermometer";
+        var fromTime = DateTime.Now;
+        _mockMeasurementService.Setup(s => s.GetRecentMeasurements(thermometerName, fromTime)).Throws(new Exception("stas monitor : unable to read data"));
+
+        // Act & Assert
+        Assert.Throws<Exception>(() => _dataManager.GetRecentMeasurements(thermometerName, fromTime));
+    }
+
+    [Test]
+    public void GetRecentHumidities_WhenServiceThrowsException_ShouldThrowsException()
+    {
+        // Arrange
+        var thermometerName = "TestThermometer";
+        var fromTime = DateTime.Now;
+        _mockMeasurementService.Setup(s => s.GetRecentHumidities(thermometerName, fromTime)).Throws(new Exception("stas monitor : unable to read data"));
+
+        // Act & Assert
+        Assert.Throws<Exception>(() => _dataManager.GetRecentHumidities(thermometerName, fromTime));
+    }
+
 }

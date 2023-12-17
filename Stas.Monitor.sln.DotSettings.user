@@ -2,27 +2,40 @@
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=32D36D05_002D7B3A_002D45BC_002DB44E_002DF6FDE7F411BC_002Ff_003AMainPresenter_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=EE61DDAE_002D56A6_002D4EB0_002DAC59_002D6C5DB24CEF96_002Ff_003ADataManagerTests_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/Users/rubenyildiz/Library/Caches/JetBrains/Rider2023.2/resharper-host/temp/Rider/vAny/CoverageData/_Stas.Monitor.-1244095734/Snapshot/snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9037b49d_002D23a3_002D4b22_002Dbb2a_002D220d209266e6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="OnShowHumidityChanged_UpdatesHumidityDisplay" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Or&gt;
+    &lt;Project Location="/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations.Tests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;Stas.Monitor.Presentations.Tests&amp;gt;" /&gt;
+    &lt;Project Location="/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains.Tests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;Stas.Monitor.Domains.Tests&amp;gt;" /&gt;
+    &lt;Project Location="/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App.Tests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;Stas.Monitor.App.Tests&amp;gt;" /&gt;
+  &lt;/Or&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9ebff54c_002D47ac_002D428d_002Db3fc_002Db23df64b56ee/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UiThreadInvokerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Or&gt;
+    &lt;TestAncestor&gt;
+      &lt;TestId&gt;NUnit3x::EE61DDAE-56A6-4EB0-AC59-6C5DB24CEF96::net6.0::Stas.Monitor.Presentations.Tests.UiThreadInvokerTests&lt;/TestId&gt;
+      &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.ConfigurationTests&lt;/TestId&gt;
+      &lt;TestId&gt;NUnit3x::EE61DDAE-56A6-4EB0-AC59-6C5DB24CEF96::net6.0::Stas.Monitor.Presentations.Tests.DataManagerTests&lt;/TestId&gt;
+      &lt;TestId&gt;NUnit3x::EE61DDAE-56A6-4EB0-AC59-6C5DB24CEF96::net6.0::Stas.Monitor.Presentations.Tests.MainPresenterTests&lt;/TestId&gt;
+    &lt;/TestAncestor&gt;
+    &lt;ProjectFile&gt;D2CC9357-1805-4C01-9B2F-0D807F9532F3/f:ThermometerConfigurationTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;D2CC9357-1805-4C01-9B2F-0D807F9532F3/f:TemperatureRepositoryTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;D2CC9357-1805-4C01-9B2F-0D807F9532F3/f:MeasurementTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;D2CC9357-1805-4C01-9B2F-0D807F9532F3/f:HumidityTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;D2CC9357-1805-4C01-9B2F-0D807F9532F3/f:HumidityRepositoryTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;D2CC9357-1805-4C01-9B2F-0D807F9532F3/f:DbConnectionFactoryTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;D2CC9357-1805-4C01-9B2F-0D807F9532F3/f:DbCommandExtensionsTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;D2CC9357-1805-4C01-9B2F-0D807F9532F3/f:DatabaseServiceTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;D2CC9357-1805-4C01-9B2F-0D807F9532F3/f:DataItemTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;D2CC9357-1805-4C01-9B2F-0D807F9532F3/f:MeasurementServicesTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;EE61DDAE-56A6-4EB0-AC59-6C5DB24CEF96/f:DataItemConverterTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;EE61DDAE-56A6-4EB0-AC59-6C5DB24CEF96/f:DisplayManagerTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;EE61DDAE-56A6-4EB0-AC59-6C5DB24CEF96/f:ThermometerPresenterTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;EE61DDAE-56A6-4EB0-AC59-6C5DB24CEF96/f:TimerManagerTests.cs&lt;/ProjectFile&gt;
+  &lt;/Or&gt;
+&lt;/SessionState&gt;</s:String>
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=72d531ae_002D35d0_002D4816_002D95a9_002D5c7021b6f292/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from ArchTests.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Project Location="/Users/rubenyildiz/RiderProjects/Stas.Monitor" Presentation="&amp;lt;tests&amp;gt;" /&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9d681fc4_002D9c29_002D4394_002Db54b_002D0579c3432921/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UpdateDataItems_ShouldMergeAndSortMeasurementsAndAlertsAsync #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::EE61DDAE-56A6-4EB0-AC59-6C5DB24CEF96::net6.0::Stas.Monitor.Presentations.Tests.ThermometerPresenterTests&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::EE61DDAE-56A6-4EB0-AC59-6C5DB24CEF96::net6.0::Stas.Monitor.Presentations.Tests.TimerManagerTests&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::EE61DDAE-56A6-4EB0-AC59-6C5DB24CEF96::net6.0::Stas.Monitor.Presentations.Tests.MainPresenterTests&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::EE61DDAE-56A6-4EB0-AC59-6C5DB24CEF96::net6.0::Stas.Monitor.Tests.DataManagerTests&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::EE61DDAE-56A6-4EB0-AC59-6C5DB24CEF96::net6.0::Stas.Monitor.Presentations.Tests.DataManagerTests&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.MeasurementServicesTests&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.AlertServicesTests&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.AlertTests&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.ConfigurationTests&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.DataItemTests&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.MeasurementTests&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.ThermometerConfigurationTests&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::7DAC8986-CB6D-4307-AC5F-B60AD6DF0E21::net6.0::Stas.Monitor.Infrastructures.Tests.CsvMeasurementReaderTests&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::7DAC8986-CB6D-4307-AC5F-B60AD6DF0E21::net6.0::Stas.Monitor.Infrastructures.Tests.IniConfigurationReaderTests&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
+	
+	
+	
 	
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Imeasurement/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

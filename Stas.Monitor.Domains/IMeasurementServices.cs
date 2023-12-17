@@ -1,9 +1,10 @@
 namespace Stas.Monitor.Domains;
 
-public class IMeasurementServices
+public interface IMeasurementServices
 {
-    public virtual IEnumerable<Measurement> GetRecentMeasurements(string thermometerName, DateTime fromTime)
-    {
-        throw new NotImplementedException();
-    }
+    public IEnumerable<Measurement> GetRecentMeasurements(string thermometerName, DateTime fromTime);
+
+    public IEnumerable<Humidity> GetRecentHumidities(string thermometerName, DateTime fromTime);
+
+    public DateTime GetLastMeasurementTimestamp(string thermometerName);
 }

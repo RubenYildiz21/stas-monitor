@@ -1,48 +1,34 @@
-namespace Stas.Monitor.Domains.Tests;
+﻿namespace Stas.Monitor.Domains.Tests;
 
 [TestFixture]
 public class DataItemTests
 {
     [Test]
-    public void Properties_SetValues_GetValues()
+    public void DataItem_ShouldInitializesPropertiesCorrectly()
     {
         // Arrange
-        var dataItem = new DataItem();
-        var timestamp = DateTime.UtcNow;
-        var dataType = "Measurement";
-        var expectedTemperature = 20.5;
-        var actualTemperature = 19.5;
+        var timestamp = DateTime.Now;
+        var difference = 5.5;
+        var actualValue = 10.0;
         var measurementType = "Temperature";
+        var formattedDifference = "+5.5";
 
         // Act
-        dataItem.Timestamp = timestamp;
-        dataItem.DataType = dataType;
-        dataItem.ExpectedTemperature = expectedTemperature;
-        dataItem.ActualTemperature = actualTemperature;
-        dataItem.MeasurementType = measurementType;
+        var dataItem = new DataItem
+        {
+            Timestamp = timestamp,
+            Difference = difference,
+            ActualValue = actualValue,
+            MeasurementType = measurementType,
+            FormattedDifference = formattedDifference
+        };
 
         // Assert
         Assert.AreEqual(timestamp, dataItem.Timestamp);
-        Assert.AreEqual(dataType, dataItem.DataType);
-        Assert.AreEqual(expectedTemperature, dataItem.ExpectedTemperature);
-        Assert.AreEqual(actualTemperature, dataItem.ActualTemperature);
+        Assert.AreEqual(difference, dataItem.Difference);
+        Assert.AreEqual(actualValue, dataItem.ActualValue);
         Assert.AreEqual(measurementType, dataItem.MeasurementType);
-    }
-        
-    [Test]
-    [TestCase("Alert", "#FF747B")]
-    [TestCase("Measurement", "White")]
-    [TestCase(null, "White")]
-    [TestCase("", "White")]
-    public void BackgroundColor_GivenDataType_ReturnsExpectedColor(string dataType, string expectedColor)
-    {
-        // Arrange
-        var dataItem = new DataItem { DataType = dataType };
-            
-        // Act
-        var backgroundColor = dataItem.BackgroundColor;
-
-        // Assert
-        Assert.AreEqual(expectedColor, backgroundColor);
+        Assert.AreEqual(formattedDifference, dataItem.FormattedDifference);
     }
 }
+

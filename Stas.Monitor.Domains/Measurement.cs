@@ -1,15 +1,20 @@
 namespace Stas.Monitor.Domains;
 
-public class Measurement : DataItem
+public record Measurement : DataItem
 {
-    public string ThermometerName { get; set; }
-    public DateTime Timestamp { get; set; }
-    
-    public string DataType
+    public string? ThermometerName { get; init; }
+
+    public new DateTime Timestamp { get; init; }
+
+    public double Temperature { get; init; }
+
+    public new double Difference { get; init; }
+
+    public new string FormattedDifference
     {
-        get => "Measurement";
-        set => throw new NotImplementedException("set DataType dans Measurement non implémenté");
+        get
+        {
+            return Difference != 0 ? $"{Difference:F2}°C" : string.Empty;
+        }
     }
-    public string MeasurementType { get; set; }
-    public double Value { get; set; }
 }

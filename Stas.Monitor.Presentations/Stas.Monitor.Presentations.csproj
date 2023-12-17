@@ -12,8 +12,18 @@
 
     <ItemGroup>
       <PackageReference Include="Avalonia" Version="11.0.2" />
-      <PackageReference Include="Be.HenNi.Analyzers" Version="1.0.2" />
+      <PackageReference Include="Be.HenNi.Analyzers" Version="1.0.3" />
+      <PackageReference Include="IDisposableAnalyzers" Version="4.0.7">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.0" />
       <PackageReference Include="NSubstitute" Version="5.1.0" />
+      <PackageReference Include="SQLite" Version="3.13.0" />
+      <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.507">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
     </ItemGroup>
 
     <ItemGroup>

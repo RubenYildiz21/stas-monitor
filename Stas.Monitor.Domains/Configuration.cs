@@ -1,15 +1,12 @@
 namespace Stas.Monitor.Domains
 {
-    public class Configuration
+    public record Configuration
     {
-        public List<ThermometerConfiguration> Thermometers { get; set; } = new List<ThermometerConfiguration>();
-        public string MeasurementFilePath {get; set; }
-        public string AlertFilePath { get; set; }
-        public Configuration(string csvFilePath, List<ThermometerConfiguration> thermometers)
+        public IList<ThermometerConfiguration> Thermometers { get; init; }
+
+        public Configuration(List<ThermometerConfiguration> thermometers)
         {
-            this.MeasurementFilePath = csvFilePath;
-            
-            this.Thermometers = thermometers ?? new List<ThermometerConfiguration>();
+            this.Thermometers = thermometers;
         }
     }
 }
