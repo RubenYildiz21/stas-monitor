@@ -8,5 +8,15 @@ namespace Stas.Monitor.Domains
         {
             this.Thermometers = thermometers;
         }
+
+        public void AddThermometer(ThermometerConfiguration thermometer)
+        {
+            Thermometers.Add(thermometer);
+        }
+
+        public void RemoveThermometer(ThermometerConfiguration thermometer)
+        {
+            Thermometers.Remove(thermometer);
+        }
     }
 }

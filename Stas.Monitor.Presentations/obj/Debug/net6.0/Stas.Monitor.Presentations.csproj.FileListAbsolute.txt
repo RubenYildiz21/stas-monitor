@@ -4,6 +4,7 @@
 /Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/bin/Debug/net6.0/Stas.Monitor.Domains.dll
 /Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/bin/Debug/net6.0/Stas.Monitor.Domains.pdb
 /Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/obj/Debug/net6.0/Stas.Monitor.Presentations.csproj.AssemblyReference.cache
+/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/obj/Debug/net6.0/Avalonia/Resources.Inputs.cache
 /Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/obj/Debug/net6.0/Stas.Monitor.Presentations.GeneratedMSBuildEditorConfig.editorconfig
 /Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/obj/Debug/net6.0/Stas.Monitor.Presentations.AssemblyInfoInputs.cache
 /Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/obj/Debug/net6.0/Stas.Monitor.Presentations.AssemblyInfo.cs
@@ -13,4 +14,3 @@
 /Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/obj/Debug/net6.0/refint/Stas.Monitor.Presentations.dll
 /Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/obj/Debug/net6.0/Stas.Monitor.Presentations.pdb
 /Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/obj/Debug/net6.0/ref/Stas.Monitor.Presentations.dll
-/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/obj/Debug/net6.0/Avalonia/Resources.Inputs.cache

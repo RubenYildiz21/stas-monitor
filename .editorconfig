@@ -350,7 +350,6 @@ dotnet_diagnostic.SA1313.severity = none
 dotnet_diagnostic.SA1314.severity = warning
 
 dotnet_diagnostic.SA1600.severity = none
-dotnet_diagnostic.SA1602.severity = none
 dotnet_diagnostic.SA1633.severity = none
 
 dotnet_diagnostic.SA0001.severity = none    
