@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Stas.Monitor.Domains;
+namespace Stas.Monitor.Infrastructures;
 
 public static class DbCommandExtensions
 {

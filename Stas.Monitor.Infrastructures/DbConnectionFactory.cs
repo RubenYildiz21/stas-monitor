@@ -1,5 +1,7 @@
-﻿namespace Stas.Monitor.Domains;
+﻿
+namespace Stas.Monitor.Infrastructures;
 
+using Domains;
 using System.Data;
 using Microsoft.Data.Sqlite;
 using MySql.Data.MySqlClient;

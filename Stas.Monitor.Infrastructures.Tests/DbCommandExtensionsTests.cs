@@ -1,4 +1,6 @@
-﻿namespace Stas.Monitor.Domains.Tests;
+﻿using System.Data;
+
+namespace Stas.Monitor.Infrastructures.Tests;
 [TestFixture]
 public class DbCommandExtensionsTests
 {

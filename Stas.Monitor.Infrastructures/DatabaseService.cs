@@ -1,7 +1,6 @@
-﻿namespace Stas.Monitor.Domains;
+﻿namespace Stas.Monitor.Infrastructures;
 
-using System;
-using System.Collections.Generic;
+using Domains;
 
 public class DatabaseService : IDatabaseService
 {

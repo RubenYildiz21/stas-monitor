@@ -1,5 +1,6 @@
-﻿using Microsoft.Data.Sqlite;
-namespace Stas.Monitor.Domains.Tests;
+﻿using System.Data;
+using Microsoft.Data.Sqlite;
+namespace Stas.Monitor.Infrastructures.Tests;
 
 [TestFixture]
 public class HumidityRepositoryTests

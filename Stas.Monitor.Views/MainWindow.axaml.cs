@@ -44,9 +44,7 @@ public partial class MainWindow : Window
         if (e.AddedItems.Count > 0 && e.AddedItems[0] is ComboBoxItem selectedItem)
         {
             var selectedDuration = selectedItem.Content!.ToString();
-            Console.WriteLine(selectedDuration);
             Presenter.SelectedDuration = selectedDuration!;
-            Console.WriteLine("Presenter : " + Presenter.SelectedDuration);
         }
     }
 }

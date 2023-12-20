@@ -1,4 +1,6 @@
-﻿namespace Stas.Monitor.Domains;
+﻿using Stas.Monitor.Domains;
+
+namespace Stas.Monitor.Infrastructures;
 
 public class HumidityRepository : IHumidityRepository
 {

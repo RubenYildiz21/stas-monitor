@@ -1,4 +1,6 @@
-﻿namespace Stas.Monitor.Domains.Tests;
+﻿
+
+namespace Stas.Monitor.Infrastructures.Tests;
 
 [TestFixture]
 public class DatabaseServiceTests

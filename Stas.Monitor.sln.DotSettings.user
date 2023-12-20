@@ -2,6 +2,21 @@
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=32D36D05_002D7B3A_002D45BC_002DB44E_002DF6FDE7F411BC_002Ff_003AMainPresenter_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=EE61DDAE_002D56A6_002D4EB0_002DAC59_002D6C5DB24CEF96_002Ff_003ADataManagerTests_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/Highlighting/SweaWarningsMode/@EntryValue">ShowAndRun</s:String>
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/Users/rubenyildiz/Library/Caches/JetBrains/Rider2023.2/resharper-host/temp/Rider/vAny/CoverageData/_Stas.Monitor.-1244095734/Snapshot/snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=18f5d19a_002D1b2b_002D40aa_002D88c7_002Dcfc8fa900dcd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="DatabaseServiceTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Or&gt;
+    &lt;TestAncestor&gt;
+      &lt;TestId&gt;NUnit3x::7DAC8986-CB6D-4307-AC5F-B60AD6DF0E21::net6.0::Stas.Monitor.Infrastructures.Tests.DatabaseServiceTests&lt;/TestId&gt;
+      &lt;TestId&gt;NUnit3x::7DAC8986-CB6D-4307-AC5F-B60AD6DF0E21::net6.0::Stas.Monitor.Infrastructures.Tests.DbConnectionFactoryTests&lt;/TestId&gt;
+      &lt;TestId&gt;NUnit3x::7DAC8986-CB6D-4307-AC5F-B60AD6DF0E21::net6.0::Stas.Monitor.Infrastructures.Tests.HumidityRepositoryTests&lt;/TestId&gt;
+      &lt;TestId&gt;NUnit3x::7DAC8986-CB6D-4307-AC5F-B60AD6DF0E21::net6.0::Stas.Monitor.Infrastructures.Tests.TemperatureRepositoryTests&lt;/TestId&gt;
+    &lt;/TestAncestor&gt;
+    &lt;Project Location="/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App.Tests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;Stas.Monitor.App.Tests&amp;gt;" /&gt;
+    &lt;Project Location="/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains.Tests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;Stas.Monitor.Domains.Tests&amp;gt;" /&gt;
+    &lt;Project Location="/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures.Tests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;Stas.Monitor.Infrastructures.Tests&amp;gt;" /&gt;
+    &lt;Project Location="/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations.Tests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;Stas.Monitor.Presentations.Tests&amp;gt;" /&gt;
+  &lt;/Or&gt;
+&lt;/SessionState&gt;</s:String>
 	
 	
 	
