@@ -17,4 +17,9 @@ public record Humidity : DataItem
             return Difference != 0 ? $"{Difference:F2}%" : string.Empty;
         }
     }
+
+    public bool IsValidHumidity()
+    {
+        return HumidityValue >= 0 && HumidityValue <= 100;
+    }
 }
