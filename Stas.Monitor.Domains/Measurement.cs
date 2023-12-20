@@ -17,4 +17,25 @@ public record Measurement : DataItem
             return Difference != 0 ? $"{Difference:F2}°C" : string.Empty;
         }
     }
+
+    public bool IsValidMeasurement()
+    {
+        return Temperature >= 0 && Temperature <= 100;
+    }
+
+    public string GetHumidityAlert()
+    {
+        if (Temperature < 30)
+        {
+            return "Low Temperature";
+        }
+        else if (Temperature > 70)
+        {
+            return "High Temperature";
+        }
+        else
+        {
+            return "Normal Temperature";
+        }
+    }
 }

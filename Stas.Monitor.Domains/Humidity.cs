@@ -18,9 +18,24 @@ public record Humidity : DataItem
         }
     }
 
-
     public bool IsValidHumidity()
     {
         return HumidityValue >= 0 && HumidityValue <= 100;
+    }
+
+    public string GetHumidityAlert()
+    {
+        if (HumidityValue < 30)
+        {
+            return "Low Humidity";
+        }
+        else if (HumidityValue > 70)
+        {
+            return "High Humidity";
+        }
+        else
+        {
+            return "Normal Humidity";
+        }
     }
 }
