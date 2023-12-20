@@ -18,6 +18,7 @@ public record Humidity : DataItem
         }
     }
 
+
     public bool IsValidHumidity()
     {
         return HumidityValue >= 0 && HumidityValue <= 100;
