@@ -18,15 +18,7 @@
   &lt;/Or&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a815db82_002D7f9a_002D41f7_002Db3f7_002Deaae1020c93a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="IsValidMeasurement_WithInvalidTemperature_ShouldReturnFalse" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.MeasurementTests.IsValidMeasurement_WithInvalidTemperature_ShouldReturnFalse&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.MeasurementTests.IsValidMeasurement_WithValidTemperature_ShouldReturnTrue&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.MeasurementTests.GetHumidityAlert_ShouldReturnCorrectAlert&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::4D6B3C03-D449-4ED1-8CDD-C74711ED4C18::net6.0::Stas.Monitor.App.Tests.ArchTests&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.DataItemTests.IsValid_WithDifferenceGreaterThan10PercentOfValue_ShouldReturnTrue&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.DataItemTests.IsValid_WithDifferenceLessThan10PercentOfValue_ShouldReturnFalse&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.DataItemTests.GetFormattedData_ShouldReturnCorrectString&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
+  &lt;Project Location="/Users/rubenyildiz/RiderProjects/Stas.Monitor" Presentation="&amp;lt;tests&amp;gt;" /&gt;
 &lt;/SessionState&gt;</s:String>
 	
 	

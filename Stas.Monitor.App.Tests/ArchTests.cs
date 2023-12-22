@@ -1,11 +1,11 @@
-﻿using System.Reflection;
-using NetArchTest.Rules;
-using Stas.Monitor.Domains;
-using Stas.Monitor.Infrastructures;
-using Stas.Monitor.Presentations;
-using Stas.Monitor.Views;
+﻿namespace Stas.Monitor.App.Tests;
 
-namespace Stas.Monitor.App.Tests;
+using System.Reflection;
+using Domains;
+using Infrastructures;
+using NetArchTest.Rules;
+using Presentations;
+using Views;
 
 public class ArchTests
 {
@@ -15,9 +15,8 @@ public class ArchTests
       typeof(Configuration).Assembly,
       typeof(IniConfigurationReader).Assembly,
       typeof(MainPresenter).Assembly,
-      typeof(MainWindow).Assembly
+      typeof(MainWindow).Assembly,
   };
-
 
   [Test]
   public void Views_Should_Depend_On_Presentation()
@@ -32,7 +31,6 @@ public class ArchTests
           .IsSuccessful, Is.True);
   }
 
-
   [Test]
   public void Infrastructures_Should_Depends_On_Domains()
   {
@@ -45,7 +43,6 @@ public class ArchTests
           .IsSuccessful, Is.True);
   }
 
-
   [Test]
   public void Presentations_Should_Depend_Only_On_Domains()
   {
@@ -57,7 +54,6 @@ public class ArchTests
           .GetResult()
           .IsSuccessful, Is.True);
   }
-
 
   [Test]
   public void Domain_Should_Not_Depend_On_Other_Assemblies()

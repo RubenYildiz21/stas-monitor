@@ -1,14 +1,16 @@
 namespace Stas.Monitor.App;
+
 using System;
 using System.IO;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Serilog;
-using Views;
 using Domains;
 using Infrastructures;
 using Presentations;
+using Serilog;
+using Views;
+
 public class App : Application
 {
     private MainWindow? _mainWindow;
