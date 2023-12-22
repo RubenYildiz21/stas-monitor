@@ -1,4 +1,3 @@
-using MySql.Data.MySqlClient;
 using Serilog;
 
 namespace Stas.Monitor.Domains;
@@ -18,7 +17,7 @@ public class MeasurementServices : IMeasurementServices
         {
             return _databaseService.GetMeasurements(thermometerName, fromTime);
         }
-        catch (MySqlException ex)
+        catch (Exception ex)
         {
             Log.Error("stas monitor : Unable to connect to database");
             throw new Exception($"stas monitor : Unable to connect to database {ex.Message}");
@@ -31,7 +30,7 @@ public class MeasurementServices : IMeasurementServices
         {
             return _databaseService.GetHumidities(thermometerName, fromTime);
         }
-        catch (MySqlException ex)
+        catch (Exception ex)
         {
             Log.Error("stas monitor : Unable to connect to database");
             throw new Exception($"stas monitor :Unable to connect to database {ex.Message}");
@@ -44,7 +43,7 @@ public class MeasurementServices : IMeasurementServices
         {
             return _databaseService.GetLastMeasurementTimestamp(thermometerName);
         }
-        catch (MySqlException e)
+        catch (Exception e)
         {
             Log.Error("stas monitor : Unable to connect to database");
             throw new Exception($"stas monitor :Unable to connect to database {e.Message}");

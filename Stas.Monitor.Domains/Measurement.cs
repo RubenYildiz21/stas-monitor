@@ -23,7 +23,7 @@ public record Measurement : DataItem
         return Temperature >= 0 && Temperature <= 100;
     }
 
-    public string GetHumidityAlert()
+    public string GetMeasurementAlert()
     {
         if (Temperature < 30)
         {

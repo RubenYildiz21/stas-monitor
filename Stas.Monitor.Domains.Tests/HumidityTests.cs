@@ -27,4 +27,56 @@ public class HumidityTests
         Assert.AreEqual(difference, humidity.Difference);
         Assert.AreEqual($"{difference:F2}%", humidity.FormattedDifference);
     }
+
+    [Test]
+    public void GetHumidityAlert_WithLowHumidity_ShouldReturnLowHumidityAlert()
+    {
+        // Arrange
+        var humidity = new Humidity { HumidityValue = 20.0 };
+
+        // Act
+        var alert = humidity.GetHumidityAlert();
+
+        // Assert
+        Assert.AreEqual("Low Humidity", alert);
+    }
+
+    [Test]
+    public void GetHumidityAlert_WithHighHumidity_ShouldReturnHighHumidityAlert()
+    {
+        // Arrange
+        var humidity = new Humidity { HumidityValue = 80.0 };
+
+        // Act
+        var alert = humidity.GetHumidityAlert();
+
+        // Assert
+        Assert.AreEqual("High Humidity", alert);
+    }
+
+    [Test]
+    public void GetHumidityAlert_WithNormalHumidity_ShouldReturnNormalHumidityAlert()
+    {
+        // Arrange
+        var humidity = new Humidity { HumidityValue = 50.0 };
+
+        // Act
+        var alert = humidity.GetHumidityAlert();
+
+        // Assert
+        Assert.AreEqual("Normal Humidity", alert);
+    }
+
+    [Test]
+    public void IsValidHumidity_WithHumidityWithinRange_ShouldReturnTrue()
+    {
+        // Arrange
+        var humidity = new Humidity { HumidityValue = 50.0 };
+
+        // Act
+        var result = humidity.IsValidHumidity();
+
+        // Assert
+        Assert.IsTrue(result);
+    }
 }

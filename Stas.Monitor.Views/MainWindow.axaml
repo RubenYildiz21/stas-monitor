@@ -9,7 +9,7 @@
         Title="Stas.Monitor.Views"
         MinWidth="1200"
         MinHeight="700">
-
+    
 
     <Grid Margin="20">
         <Grid.RowDefinitions>

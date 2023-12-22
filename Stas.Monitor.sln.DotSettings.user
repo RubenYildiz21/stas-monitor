@@ -3,7 +3,7 @@
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=EE61DDAE_002D56A6_002D4EB0_002DAC59_002D6C5DB24CEF96_002Ff_003ADataManagerTests_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/Highlighting/SweaWarningsMode/@EntryValue">ShowAndRun</s:String>
 	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/Users/rubenyildiz/Library/Caches/JetBrains/Rider2023.2/resharper-host/temp/Rider/vAny/CoverageData/_Stas.Monitor.-1244095734/Snapshot/snapshot.utdcvr</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=18f5d19a_002D1b2b_002D40aa_002D88c7_002Dcfc8fa900dcd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="DatabaseServiceTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=18f5d19a_002D1b2b_002D40aa_002D88c7_002Dcfc8fa900dcd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="DatabaseServiceTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;Or&gt;
     &lt;TestAncestor&gt;
       &lt;TestId&gt;NUnit3x::7DAC8986-CB6D-4307-AC5F-B60AD6DF0E21::net6.0::Stas.Monitor.Infrastructures.Tests.DatabaseServiceTests&lt;/TestId&gt;
@@ -16,6 +16,17 @@
     &lt;Project Location="/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures.Tests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;Stas.Monitor.Infrastructures.Tests&amp;gt;" /&gt;
     &lt;Project Location="/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations.Tests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;Stas.Monitor.Presentations.Tests&amp;gt;" /&gt;
   &lt;/Or&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a815db82_002D7f9a_002D41f7_002Db3f7_002Deaae1020c93a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="IsValidMeasurement_WithInvalidTemperature_ShouldReturnFalse" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.MeasurementTests.IsValidMeasurement_WithInvalidTemperature_ShouldReturnFalse&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.MeasurementTests.IsValidMeasurement_WithValidTemperature_ShouldReturnTrue&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.MeasurementTests.GetHumidityAlert_ShouldReturnCorrectAlert&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::4D6B3C03-D449-4ED1-8CDD-C74711ED4C18::net6.0::Stas.Monitor.App.Tests.ArchTests&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.DataItemTests.IsValid_WithDifferenceGreaterThan10PercentOfValue_ShouldReturnTrue&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.DataItemTests.IsValid_WithDifferenceLessThan10PercentOfValue_ShouldReturnFalse&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::D2CC9357-1805-4C01-9B2F-0D807F9532F3::net6.0::Stas.Monitor.Domains.Tests.DataItemTests.GetFormattedData_ShouldReturnCorrectString&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	
 	
