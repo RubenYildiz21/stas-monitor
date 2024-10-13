@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3nb59pTnIwp5RXb0p/i/zAsRB9E9Z9rUcgzpz770/VDqpokuwFrAfTKSrBS+IFNbrUS3vCEgHgMHyCbfJasdVA==",
+  "dgSpecHash": "XHVGDJHqIzM=",
   "success": true,
-  "projectFilePath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Views/Stas.Monitor.Views.csproj",
+  "projectFilePath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Views/Stas.Monitor.Views.csproj",
   "expectedPackageFiles": [
     "/Users/rubenyildiz/.nuget/packages/avalonia/11.0.2/avalonia.11.0.2.nupkg.sha512",
     "/Users/rubenyildiz/.nuget/packages/avalonia.angle.windows.natives/2.1.0.2023020321/avalonia.angle.windows.natives.2.1.0.2023020321.nupkg.sha512",

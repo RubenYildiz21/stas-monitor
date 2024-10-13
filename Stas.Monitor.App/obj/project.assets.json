@@ -9831,11 +9831,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App/Stas.Monitor.App.csproj",
+      "projectUniqueName": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.App/Stas.Monitor.App.csproj",
       "projectName": "Stas.Monitor.App",
-      "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App/Stas.Monitor.App.csproj",
+      "projectPath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.App/Stas.Monitor.App.csproj",
       "packagesPath": "/Users/rubenyildiz/.nuget/packages/",
-      "outputPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.App/obj/",
+      "outputPath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.App/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rubenyildiz/.nuget/NuGet/NuGet.Config"
@@ -9850,17 +9850,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj": {
-              "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj"
+            "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj": {
+              "projectPath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj"
             },
-            "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj": {
-              "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj"
+            "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj": {
+              "projectPath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj"
             },
-            "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/Stas.Monitor.Presentations.csproj": {
-              "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/Stas.Monitor.Presentations.csproj"
+            "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Presentations/Stas.Monitor.Presentations.csproj": {
+              "projectPath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Presentations/Stas.Monitor.Presentations.csproj"
             },
-            "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Views/Stas.Monitor.Views.csproj": {
-              "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Views/Stas.Monitor.Views.csproj"
+            "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Views/Stas.Monitor.Views.csproj": {
+              "projectPath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Views/Stas.Monitor.Views.csproj"
             }
           }
         }
@@ -9869,6 +9869,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -9960,7 +9965,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/RuntimeIdentifierGraph.json"
       }
     }
   }

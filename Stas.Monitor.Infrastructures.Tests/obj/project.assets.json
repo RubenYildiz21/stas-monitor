@@ -6601,11 +6601,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures.Tests/Stas.Monitor.Infrastructures.Tests.csproj",
+      "projectUniqueName": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Infrastructures.Tests/Stas.Monitor.Infrastructures.Tests.csproj",
       "projectName": "Stas.Monitor.Infrastructures.Tests",
-      "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures.Tests/Stas.Monitor.Infrastructures.Tests.csproj",
+      "projectPath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Infrastructures.Tests/Stas.Monitor.Infrastructures.Tests.csproj",
       "packagesPath": "/Users/rubenyildiz/.nuget/packages/",
-      "outputPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures.Tests/obj/",
+      "outputPath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Infrastructures.Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rubenyildiz/.nuget/NuGet/NuGet.Config"
@@ -6620,11 +6620,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj": {
-              "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj"
+            "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj": {
+              "projectPath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj"
             },
-            "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj": {
-              "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj"
+            "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj": {
+              "projectPath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj"
             }
           }
         }
@@ -6633,6 +6633,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -6706,7 +6711,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -6715,7 +6720,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Xunit.Microsoft.VisualStudio.TestTools.UnitTesting 1.0.0-beta-1011 depends on NETStandard.Library (>= 1.0.0-rc2-23909) but NETStandard.Library 1.0.0-rc2-23909 was not found. An approximate best match of NETStandard.Library 1.5.0-rc2-24027 was resolved.",
+      "message": "Xunit.Microsoft.VisualStudio.TestTools.UnitTesting 1.0.0-beta-1011 dépend de NETStandard.Library (>= 1.0.0-rc2-23909), mais NETStandard.Library 1.0.0-rc2-23909 est introuvable. Une meilleure correspondance approximative de NETStandard.Library 1.5.0-rc2-24027 a été résolue.",
       "libraryId": "NETStandard.Library",
       "targetGraphs": [
         "net6.0"
@@ -6725,7 +6730,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Xunit.Microsoft.VisualStudio.TestTools.UnitTesting 1.0.0-beta-1011 depends on System.Reflection (>= 4.1.0-rc2-23909) but System.Reflection 4.1.0-rc2-23909 was not found. An approximate best match of System.Reflection 4.1.0-rc2-24027 was resolved.",
+      "message": "Xunit.Microsoft.VisualStudio.TestTools.UnitTesting 1.0.0-beta-1011 dépend de System.Reflection (>= 4.1.0-rc2-23909), mais System.Reflection 4.1.0-rc2-23909 est introuvable. Une meilleure correspondance approximative de System.Reflection 4.1.0-rc2-24027 a été résolue.",
       "libraryId": "System.Reflection",
       "targetGraphs": [
         "net6.0"
@@ -6735,7 +6740,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Xunit.Microsoft.VisualStudio.TestTools.UnitTesting 1.0.0-beta-1011 depends on System.Runtime (>= 4.1.0-rc2-23909) but System.Runtime 4.1.0-rc2-23909 was not found. An approximate best match of System.Runtime 4.1.0-rc2-24027 was resolved.",
+      "message": "Xunit.Microsoft.VisualStudio.TestTools.UnitTesting 1.0.0-beta-1011 dépend de System.Runtime (>= 4.1.0-rc2-23909), mais System.Runtime 4.1.0-rc2-23909 est introuvable. Une meilleure correspondance approximative de System.Runtime 4.1.0-rc2-24027 a été résolue.",
       "libraryId": "System.Runtime",
       "targetGraphs": [
         "net6.0"
@@ -6745,7 +6750,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'xunit.abstractions 2.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Le package 'xunit.abstractions 2.0.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "xunit.abstractions",
       "targetGraphs": [
         "net6.0"
@@ -6755,7 +6760,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'xunit.assert 2.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Le package 'xunit.assert 2.1.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "xunit.assert",
       "targetGraphs": [
         "net6.0"
@@ -6765,7 +6770,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'xunit.core 2.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Le package 'xunit.core 2.1.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "xunit.core",
       "targetGraphs": [
         "net6.0"
@@ -6775,7 +6780,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'xunit.extensibility.core 2.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Le package 'xunit.extensibility.core 2.1.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "xunit.extensibility.core",
       "targetGraphs": [
         "net6.0"
@@ -6785,7 +6790,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'xunit.extensibility.execution 2.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Le package 'xunit.extensibility.execution 2.1.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "xunit.extensibility.execution",
       "targetGraphs": [
         "net6.0"
@@ -6795,7 +6800,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Xunit.Microsoft.VisualStudio.TestTools.UnitTesting 1.0.0-beta-1011' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Le package 'Xunit.Microsoft.VisualStudio.TestTools.UnitTesting 1.0.0-beta-1011' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "Xunit.Microsoft.VisualStudio.TestTools.UnitTesting",
       "targetGraphs": [
         "net6.0"

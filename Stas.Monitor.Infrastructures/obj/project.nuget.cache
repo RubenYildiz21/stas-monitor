@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EX11BW/mMI960kFKxXTseehpwqK9u+kmgfSffq58CMtyilRMiIQDlTUtRhSftF4MfFsl9CIdoxazsUR56jk4tg==",
+  "dgSpecHash": "peR9iM7XsB8=",
   "success": true,
-  "projectFilePath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj",
+  "projectFilePath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Infrastructures/Stas.Monitor.Infrastructures.csproj",
   "expectedPackageFiles": [
     "/Users/rubenyildiz/.nuget/packages/be.henni.analyzers/1.0.3/be.henni.analyzers.1.0.3.nupkg.sha512",
     "/Users/rubenyildiz/.nuget/packages/bouncycastle.cryptography/2.2.1/bouncycastle.cryptography.2.2.1.nupkg.sha512",

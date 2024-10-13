@@ -10,9 +10,12 @@ build_property.UsingMicrosoftNETSdkWeb =
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Stas.Monitor.Presentations
-build_property.ProjectDir = /Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations/
+build_property.ProjectDir = /Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Presentations/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[/Users/rubenyildiz/RiderProjects/Stas.Monitor/CodeMetricsConfig.txt]
+[/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/CodeMetricsConfig.txt]
 build_metadata.AdditionalFiles.SourceItemGroup = 

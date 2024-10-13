@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stas.Monitor.Domains")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe20f6d9481b3ce324418b86691f42a4490cb532")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stas.Monitor.Domains")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stas.Monitor.Domains")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

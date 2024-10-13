@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6BiMSqrfwSnxSdtlx+wFVWwXwOego+sYG7A+5AoSQ5MRuIqugKQf3NkrIRqxw+P/FCEn6qj5nZUnBetWviGY4Q==",
+  "dgSpecHash": "Qiylvb6xdds=",
   "success": true,
-  "projectFilePath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Presentations.Tests/Stas.Monitor.Presentations.Tests.csproj",
+  "projectFilePath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Presentations.Tests/Stas.Monitor.Presentations.Tests.csproj",
   "expectedPackageFiles": [
     "/Users/rubenyildiz/.nuget/packages/avalonia/11.0.2/avalonia.11.0.2.nupkg.sha512",
     "/Users/rubenyildiz/.nuget/packages/avalonia.buildservices/0.0.28/avalonia.buildservices.0.0.28.nupkg.sha512",

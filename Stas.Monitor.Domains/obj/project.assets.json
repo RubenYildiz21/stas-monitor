@@ -3011,11 +3011,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj",
+      "projectUniqueName": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj",
       "projectName": "Stas.Monitor.Domains",
-      "projectPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj",
+      "projectPath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Domains/Stas.Monitor.Domains.csproj",
       "packagesPath": "/Users/rubenyildiz/.nuget/packages/",
-      "outputPath": "/Users/rubenyildiz/RiderProjects/Stas.Monitor/Stas.Monitor.Domains/obj/",
+      "outputPath": "/Users/rubenyildiz/Desktop/Helmo/Bac2/Java/stas.monitor/Stas.Monitor.Domains/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rubenyildiz/.nuget/NuGet/NuGet.Config"
@@ -3036,6 +3036,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3099,7 +3104,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/RuntimeIdentifierGraph.json"
       }
     }
   }
